@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import taskManagerImg from "@/assets/project-task-manager.jpg";
+import ecommerceImg from "@/assets/project-ecommerce-dashboard.jpg";
+import sentimentImg from "@/assets/project-sentiment-analyzer.jpg";
+import chatAppImg from "@/assets/project-chat-app.jpg";
+import weatherAppImg from "@/assets/project-weather-app.jpg";
+import recipeAppImg from "@/assets/project-recipe-app.jpg";
 
 const Projects = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   const projects = [
     {
       title: "AI-Powered Task Manager",
@@ -11,7 +20,8 @@ const Projects = () => {
       technologies: ["React", "Python", "TensorFlow", "REST API"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: true
+      featured: true,
+      image: taskManagerImg
     },
     {
       title: "E-Commerce Analytics Dashboard",
@@ -19,7 +29,8 @@ const Projects = () => {
       technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: true
+      featured: true,
+      image: ecommerceImg
     },
     {
       title: "Social Media Sentiment Analyzer",
@@ -27,9 +38,39 @@ const Projects = () => {
       technologies: ["Python", "Pandas", "NLTK", "Matplotlib"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: false
+      featured: true,
+      image: sentimentImg
+    },
+    {
+      title: "Real-Time Chat Application",
+      description: "Secure messaging platform with real-time communication, file sharing, and group chat functionality using WebSocket technology.",
+      technologies: ["React", "Node.js", "Socket.io", "PostgreSQL"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: false,
+      image: chatAppImg
+    },
+    {
+      title: "Weather Forecast App",
+      description: "Location-based weather application with 7-day forecasts, interactive maps, and weather alerts using machine learning predictions.",
+      technologies: ["React Native", "Python", "OpenWeatherAPI", "Firebase"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: false,
+      image: weatherAppImg
+    },
+    {
+      title: "AI Recipe Recommendation System",
+      description: "Personalized recipe suggestions based on dietary preferences, available ingredients, and nutritional goals using AI algorithms.",
+      technologies: ["Vue.js", "Python", "Scikit-learn", "MySQL"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: false,
+      image: recipeAppImg
     }
   ];
+
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
 
   return (
     <section className="py-24 bg-background">
@@ -42,13 +83,22 @@ const Projects = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <Card 
               key={index} 
               className={`group hover:shadow-glow-secondary transition-all duration-300 hover:scale-105 ${
                 project.featured ? 'border-primary/50' : ''
               }`}
             >
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
                   <CardTitle className="text-xl group-hover:text-primary transition-colors">
@@ -90,8 +140,12 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            View All Projects
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => setShowAllProjects(!showAllProjects)}
+          >
+            {showAllProjects ? 'Show Featured Projects' : 'View All Projects'}
           </Button>
         </div>
       </div>
