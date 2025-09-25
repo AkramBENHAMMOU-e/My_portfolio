@@ -69,7 +69,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-card/30 rounded-2xl p-8 space-y-6">
+            <div className="bg-card/30 rounded-2xl p-8 space-y-6 -mt-8">
               <h3 className="text-2xl font-semibold">Quick Message</h3>
               <p className="text-muted-foreground">
                 Interested in discussing opportunities? Feel free to reach out directly via email or phone, 
