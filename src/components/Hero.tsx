@@ -28,11 +28,11 @@ const Hero = () => {
           </div>
           
           <div className="relative animate-slide-in">
-            <div className="relative overflow-hidden rounded-2xl shadow-glow-secondary">
+            <div className="relative overflow-hidden rounded-2xl shadow-glow-secondary w-80 h-80 mx-auto">
               <img 
                 src={professionalHeadshot} 
                 alt="Professional headshot of software developer" 
-                className="w-full h-[500px] object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
