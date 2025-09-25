@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import professionalHeadshot from "@/assets/professional-headshot.jpg";
 
 const Hero = () => {
   return (
@@ -30,11 +30,10 @@ const Hero = () => {
           <div className="relative animate-slide-in">
             <div className="relative overflow-hidden rounded-2xl shadow-glow-secondary">
               <img 
-                src={heroImage} 
-                alt="Developer workspace with modern setup" 
+                src={professionalHeadshot} 
+                alt="Professional headshot of software developer" 
                 className="w-full h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
             </div>
           </div>
         </div>
