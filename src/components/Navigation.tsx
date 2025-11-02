@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FolderKanban } from "lucide-react";
 import { useState } from "react";
 import cv from "@/assets/cv.pdf";
 
@@ -17,7 +17,8 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background border-b border-border z-50">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          <div className="text-xl font-semibold text-foreground">
+          <div className="text-xl font-semibold text-foreground flex items-center gap-2">
+            <FolderKanban className="h-6 w-6" />
             Portfolio
           </div>
           
