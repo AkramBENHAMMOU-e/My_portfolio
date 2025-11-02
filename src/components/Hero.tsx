@@ -1,45 +1,44 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import professionalHeadshot from "@/assets/professional-headshot.jpg";
+import professionalHeadshot from "@/assets/profil-cv1.png";
+import cv from "@/assets/cv.pdf";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-secondary">
-      <div className="container mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-accent bg-clip-text text-transparent">
-                Software & AI Developer
+    <section className="min-h-screen flex items-center justify-center bg-background">
+      <div className="container mx-auto px-6 py-32">
+        <div className="grid md:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-6xl font-semibold text-foreground leading-tight">
+                Akram
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Passionate computer science student seeking internship opportunities to contribute to innovative projects and grow expertise in software development and artificial intelligence.
+              <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground">
+                Développeur Software & IA
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                Spécialisé dans la création de solutions logicielles innovantes et l'implémentation d'algorithmes d'intelligence artificielle.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8">
-                View Projects
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <Button variant="default" size="lg" className="text-sm px-8 py-6 font-medium" onClick={() => window.location.href = "#projects"}>
+                Voir mes projets
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Download Resume
+              <Button variant="outline" size="lg" className="text-sm px-8 py-6 font-medium border-border" onClick={() => window.open(cv, '_blank')}>
+                Télécharger CV
               </Button>
             </div>
           </div>
           
-          <div className="relative animate-slide-in">
-            <div className="relative overflow-hidden rounded-2xl shadow-glow-secondary w-80 h-80 mx-auto">
+          <div className="flex justify-center">
+            <div className="relative w-64 h-64 md:w-80 md:h-80">
               <img 
                 src={professionalHeadshot} 
-                alt="Professional headshot of software developer" 
+                alt="Photo professionnelle d'Akram" 
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
-        </div>
-        
-        <div className="text-center mt-16 animate-fade-in">
-          <ChevronDown className="h-8 w-8 mx-auto text-primary animate-bounce" />
         </div>
       </div>
     </section>

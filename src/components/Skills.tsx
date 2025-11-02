@@ -4,38 +4,38 @@ import { Badge } from "@/components/ui/badge";
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Programming Languages",
-      skills: ["Python", "JavaScript", "TypeScript", "Java", "C++", "SQL"]
+      category: "Langages de Programmation",
+      skills: ["Java","python", "JavaScript", "TypeScript", "C", "SQL"]
     },
     {
-      category: "Web Technologies",
-      skills: ["React", "Node.js", "HTML5", "CSS3", "REST APIs", "GraphQL"]
+      category: "Technologies Web",
+      skills: ["Angular", "Spring Boot", "HTML5", "CSS3", "REST APIs", "GraphQL"]
     },
     {
-      category: "AI & Data Science",
-      skills: ["TensorFlow", "PyTorch", "Pandas", "NumPy", "Scikit-learn", "OpenAI API"]
+      category: "IA & Science des Données",
+      skills: ["TensorFlow", "PyTorch", "Pandas", "NumPy", "Scikit-learn","LLM","RAG","n8n","CrewAI","NLP","Langchain"]
     },
     {
-      category: "Tools & Platforms",
-      skills: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Linux"]
+      category: "Outils & Plateformes",
+      skills: ["Git", "Docker","MySQL", "PostgreSQL", "Linux"]
     }
   ];
 
   return (
-    <section className="py-24 bg-gradient-secondary">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">Technical Skills</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for building modern applications and AI solutions
+    <section className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-semibold mb-6 text-foreground">Compétences Techniques</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Une boîte à outils complète pour créer des applications modernes et des solutions IA
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-card/50 hover:shadow-glow-primary transition-all duration-300">
+            <Card key={index} className="bg-card border-border">
               <CardHeader>
-                <CardTitle className="text-xl text-primary">{category.category}</CardTitle>
+                <CardTitle className="text-xl font-semibold text-foreground">{category.category}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -43,7 +43,7 @@ const Skills = () => {
                     <Badge 
                       key={skillIndex} 
                       variant="secondary" 
-                      className="bg-secondary/30 text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                      className="bg-secondary text-secondary-foreground text-xs font-normal"
                     >
                       {skill}
                     </Badge>
