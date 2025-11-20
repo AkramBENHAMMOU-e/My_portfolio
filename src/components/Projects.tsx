@@ -45,7 +45,7 @@ const Projects = () => {
       "title": "DIGITAL BANKING - PLATEFORME DE BANQUE NUMERIQUE",
       "description": "Conception et développement d'une application web complète avec un backend en Spring Boot et une interface utilisateur dynamique et réactive construite avec Angular. Sécurisation de l'application avec Spring Security et JWT.",
       "technologies": ["Spring Boot", "Angular", "Spring Security", "JWT"],
-      "liveUrl": "https://drive.google.com/file/d/1vqfz11MLyD8-qhFFQMylNt9MTrwOiD13/view?usp=sharing",
+      "liveUrl": "https://drive.google.com/file/d/17-B51C3RP3soR4ZHwkXpNGXqupPQkvi_/view?usp=sharing",
       "githubUrl": "https://github.com/AkramBENHAMMOU-e/Spring-Angular-JWT---Digital-Banking-backend",
       "featured": false,
       "image": ebankingImg
